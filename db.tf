@@ -1,5 +1,8 @@
 variable "DATABASE_USER" {}
 variable "DATABASE_PASSWORD" {}
+variable "aws_access_key_id" {}
+variable "aws_secret_access_key" {}
+variable "aws_session_token" {}
 
 provider "aws" {
   access_key = var.aws_access_key_id
