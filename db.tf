@@ -2,7 +2,10 @@ variable "DATABASE_USER" {}
 variable "DATABASE_PASSWORD" {}
 
 provider "aws" {
-  region = "us-east-1"  # Substitua pela sua região desejada
+  access_key = var.aws_access_key_id
+  secret_key = var.aws_secret_access_key
+  token = var.aws_session_token
+  region = "us-east-1"
 }
 
 resource "aws_db_instance" "goodburguer" {
