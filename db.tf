@@ -1,5 +1,5 @@
-variable "database_user" {}
-variable "database_password" {}
+variable "DATABASE_USER" {}
+variable "DATABASE_PASSWORD" {}
 
 provider "aws" {
   region = "us-east-1"  # Substitua pela sua região desejada
