@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_db_instance" "goodburguer" {
-  arn  = "arn:aws:rds:us-east-1:615687076434:db:goodburguer"
+  id                   = "goodburguer"
   identifier           = "goodburguer"
   allocated_storage    = 20
   storage_type         = "gp2"
