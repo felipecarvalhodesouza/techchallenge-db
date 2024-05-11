@@ -12,8 +12,8 @@ resource "aws_db_instance" "goodburguer" {
   engine               = "mysql"
   engine_version       = "5.7"
   instance_class       = "db.t3.micro"
-  username             = var.database_user
-  password             = var.database_password
+  username             = var.DATABASE_USER
+  password             = var.DATABASE_PASSWORD
   parameter_group_name = "default.mysql5.7"
 
   publicly_accessible  = true 
