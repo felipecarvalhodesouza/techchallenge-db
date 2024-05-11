@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_db_instance" "goodburguer" {
-  identifier           = "db-LFHJ6SX47WH5FVQRRH2J7YZZAQ"
+  identifier           = "goodburguer"
   allocated_storage    = 20
   storage_type         = "gp2"
   engine               = "mysql"
