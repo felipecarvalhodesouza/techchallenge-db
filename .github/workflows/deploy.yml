@@ -32,4 +32,6 @@ jobs:
         env:
           TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          TR_VAR_aws_session_token : ${{ secrets.AWS_SESSION_TOKEN }}
+          TF_VAR_aws_session_token : ${{ secrets.AWS_SESSION_TOKEN }}
+          TF_VAR_DATABASE_USER : ${{ secrets.DATABASE_USER }}
+          TF_VAR_DATABASE_PASSWORD : ${{ secrets.DATABASE_PASSWORD }}
