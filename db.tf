@@ -1,18 +1,5 @@
-variable "DATABASE_USER" {}
-variable "DATABASE_PASSWORD" {}
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
-variable "AWS_SESSION_TOKEN" {}
-
-provider "aws" {
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
-  token = var.AWS_SESSION_TOKEN
-  region = "us-east-1"
-}
-
-resource "aws_db_instance" "goodburguer" {
-  identifier           = "goodburguer"
+resource "aws_db_instance" var.projectName {
+  identifier           = var.projectName
   allocated_storage    = 20
   storage_type         = "gp2"
   engine               = "mysql"
