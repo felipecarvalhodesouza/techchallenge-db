@@ -11,8 +11,8 @@ resource "aws_db_instance" "goodburguer" {
 
   publicly_accessible  = true 
 
-   Adiciona o grupo de segurança
-  vpc_security_group_ids = [data.aws_security_group.goodburguerdb_security_group.id]
+  # Adiciona o grupo de segurança
+  vpc_security_group_ids = [aws_security_group.goodburguerdb_security_group.id]
 }
 
 resource "aws_security_group" "goodburguerdb_security_group" {
@@ -32,8 +32,4 @@ resource "aws_security_group" "goodburguerdb_security_group" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-
-data "aws_security_group" "goodburguerdb_security_group" {
-  name = "goodburguerdb_security_group"
 }
