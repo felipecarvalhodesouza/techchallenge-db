@@ -1,4 +1,4 @@
-resource "aws_db_instance" var.projectName {
+resource "aws_db_instance" "goodburguer" {
   identifier           = var.projectName
   allocated_storage    = 20
   storage_type         = "gp2"
@@ -11,28 +11,28 @@ resource "aws_db_instance" var.projectName {
 
   publicly_accessible  = true 
 
-  # Adiciona o grupo de segurança
+   Adiciona o grupo de segurança
   vpc_security_group_ids = [data.aws_security_group.goodburguerdb_security_group.id]
 }
 
-#resource "aws_security_group" "goodburguerdb_security_group" {
-#  name        = "goodburguerdb_security_group"
-#  description = "Permite trafego de entrada para o banco de dados RDS"
-#
-#  ingress {
-#    from_port   = 3306
-#    to_port     = 3306
-#    protocol    = "tcp"
-#    cidr_blocks = ["0.0.0.0/0"]  #
-#  }
-#
-#  egress {
-#    from_port   = 0
-#    to_port     = 0
-#    protocol    = "-1"
-#    cidr_blocks = ["0.0.0.0/0"]
-#  }
-#}
+resource "aws_security_group" "goodburguerdb_security_group" {
+  name        = "goodburguerdb_security_group"
+  description = "Permite trafego de entrada para o banco de dados RDS"
+
+  ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
 data "aws_security_group" "goodburguerdb_security_group" {
   name = "goodburguerdb_security_group"
